@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheers to 40! | Birthday Celebration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Customizing colors to match UGA's classic Red and Black
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        uga: {
+                            red: '#BA0C2F',
+                            black: '#000000',
+                            darkGray: '#222222',
+                            light: '#F8F9FA'
+                        }
+                    },
+                    fontFamily: {
+                        oswald: ['Oswald', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth transitions for tab switching */
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Diagonal Gingham Pattern CSS */
+        .bg-gingham-red {
+            background-color: #ffffff;
+            background-image: 
+                repeating-linear-gradient(45deg, rgba(186, 12, 47, 0.45) 0px, rgba(186, 12, 47, 0.45) 20px, transparent 20px, transparent 40px),
+                repeating-linear-gradient(-45deg, rgba(186, 12, 47, 0.45) 0px, rgba(186, 12, 47, 0.45) 20px, transparent 20px, transparent 40px);
+        }
+
+        .header-overlay {
+            background-color: rgba(0, 0, 0, 0.45);
+        }
+    </style>
+</head>
+<body class="bg-uga-light font-oswald text-uga-black min-h-screen flex flex-col">
+
+    <header class="relative bg-gingham-red text-white text-center shadow-md border-b-4 border-uga-red overflow-hidden">
+        <div class="header-overlay py-12 px-4 w-full h-full">
+            <h1 class="text-4xl md:text-5xl font-oswald font-bold tracking-wide text-white uppercase drop-shadow-lg">Glory Glory!</h1>
+            <p class="mt-2 text-xl tracking-widest uppercase text-white font-semibold drop-shadow-md">Sara's turning 40!</p>
+        </div>
+    </header>
+
+    <nav class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-200">
+        <div class="max-w-4xl mx-auto flex justify-center space-x-2 md:space-x-8 py-3 px-2">
+            <button onclick="switchTab('party-info')" id="tab-party-info" class="tab-btn px-4 py-2 font-semibold rounded-md transition-all duration-200 text-uga-red bg-red-50 border-b-2 border-uga-red">
+                Party Info
+            </button>
+            <button onclick="switchTab('location')" id="tab-location" class="tab-btn px-4 py-2 font-semibold rounded-md transition-all duration-200 text-gray-600 hover:text-uga-red hover:bg-gray-50">
+                Location
+            </button>
+            <button onclick="switchTab('menu')" id="tab-menu" class="tab-btn px-4 py-2 font-semibold rounded-md transition-all duration-200 text-gray-600 hover:text-uga-red hover:bg-gray-50">
+                Menu
+            </button>
+        </div>
+    </nav>
+
+    <main class="flex-grow max-w-4xl w-full mx-auto px-4 py-8">
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 md:p-10">
+            
+            <div id="party-info" class="tab-content active space-y-6">
+                <h2 class="text-2xl font-bold border-b pb-2 text-uga-black border-uga-red uppercase">Party Details</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    [Placeholder: Add your main party description, date, and time here. For example: Join us for an evening of drinks, dancing, and celebrating four incredible decades!]
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    <div class="p-4 bg-uga-light rounded-lg border border-gray-200">
+                        <strong class="block text-sm uppercase tracking-wider text-gray-500">Date & Time</strong>
+                        <p class="text-lg font-bold mt-1 text-uga-darkGray">[Saturday, November 14th at 6:00 PM]</p>
+                    </div>
+                    <div class="p-4 bg-uga-light rounded-lg border border-gray-200">
+                        <strong class="block text-sm uppercase tracking-wider text-gray-500">Dress Code</strong>
+                        <p class="text-lg font-bold mt-1 text-uga-darkGray">[Smart Casual / Cocktail Attire]</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="location" class="tab-content space-y-6">
+                <h2 class="text-2xl font-bold border-b pb-2 text-uga-black border-uga-red uppercase">The Venue</h2>
+                <div class="space-y-2">
+                    <p class="text-xl font-bold text-uga-red">[Beach House on Folly Beach]</p>
+                    <p class="text-gray-700 font-medium">[1016 E Arctic Ave, Folly Beach, SC 29439]</p>
+                </div>
+                <p class="text-gray-700 leading-relaxed">
+                    [Placeholder: Add parking instructions, gate codes, or driving directions here. You can also embed a Google Maps iframe right below this text later.]
+                </p>
+                <div class="w-full h-64 bg-gray-100 rounded-lg overflow-hidden border border-gray-300">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d890.9218645826597!2d-79.91944012736764!3d32.664253180912496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88fdd8027f24ca29%3A0x202e7439e1829688!2s1016%20E%20Arctic%20Ave%2C%20Folly%20Beach%2C%20SC%2029439!5e0!3m2!1sen!2sus!4v1778876841863!5m2!1sen!2sus" class="w-full h-full border-0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <div id="menu" class="tab-content space-y-6">
+                <h2 class="text-2xl font-bold border-b pb-2 text-uga-black border-uga-red uppercase">Weekend Menu</h2>
+                <p class="text-gray-700 italic">
+                    Here is what we have planned for the weekend celebration. Please let us know if you have any dietary restrictions!
+                </p>
+                
+                <div class="space-y-6 mt-4">
+                    <div class="p-4 bg-uga-light rounded-lg border-l-4 border-uga-red border border-gray-200 shadow-sm">
+                        <h3 class="text-lg font-bold text-uga-red mb-1 uppercase">Friday Dinner</h3>
+                        <p class="text-gray-600">[Placeholder: Add menu details, catering type, or signature drinks for Friday evening here.]</p>
+                    </div>
+
+                    <div class="p-4 bg-uga-light rounded-lg border-l-4 border-uga-red border border-gray-200 shadow-sm">
+                        <h3 class="text-lg font-bold text-uga-red mb-1 uppercase">Saturday Breakfast</h3>
+                        <p class="text-gray-600">[Placeholder: Add breakfast details, coffee options, pastries, etc. here.]</p>
+                    </div>
+
+                    <div class="p-4 bg-uga-light rounded-lg border-l-4 border-uga-red border border-gray-200 shadow-sm">
+                        <h3 class="text-lg font-bold text-uga-red mb-1 uppercase">Saturday Lunch</h3>
+                        <p class="text-gray-600">[Placeholder: Add casual lunch setup, spreads, or afternoon bites details here.]</p>
+                    </div>
+
+                    <div class="p-4 bg-uga-light rounded-lg border-l-4 border-uga-red border border-gray-200 shadow-sm">
+                        <h3 class="text-lg font-bold text-uga-red mb-1 uppercase">Saturday Dinner</h3>
+                        <p class="text-gray-600">[Placeholder: Add main celebration dinner menu, signature cocktails, and cake flavors here.]</p>
+                    </div>
+
+                    <div class="p-4 bg-uga-light rounded-lg border-l-4 border-uga-red border border-gray-200 shadow-sm">
+                        <h3 class="text-lg font-bold text-uga-red mb-1 uppercase">Sunday Breakfast</h3>
+                        <p class="text-gray-600">[Placeholder: Add farewell brunch/breakfast details or grab-and-go options here.]</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-uga-black text-gray-400 text-center py-6 text-sm mt-8 border-t-2 border-uga-red">
+        <p>Looking forward to celebrating with you! Please RSVP by [Date].</p>
+    </footer>
+
+    <script>
+        function switchTab(tabId) {
+            // 1. Hide all tab content
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // 2. Remove active styling from all nav buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                // Clear all possible active states
+                btn.classList.remove('text-uga-red', 'bg-red-50', 'border-b-2', 'border-uga-red');
+                // Restore default inactive states
+                btn.classList.add('text-gray-600', 'hover:text-uga-red', 'hover:bg-gray-50');
+            });
+
+            // 3. Show the selected tab content
+            document.getElementById(tabId).classList.add('active');
+
+            // 4. Add active styling to the clicked button
+            const activeBtn = document.getElementById(`tab-${tabId}`);
+            activeBtn.classList.remove('text-gray-600', 'hover:text-uga-red', 'hover:bg-gray-50');
+            activeBtn.classList.add('text-uga-red', 'bg-red-50', 'border-b-2', 'border-uga-red');
+        }
+    </script>
+</body>
+</html>
